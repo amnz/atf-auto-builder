@@ -1,0 +1,11 @@
+/.gradle/
+/.settings/
+.classpath
+.project
+/build/
+
+
+*.launch
+test.properties
+/testrepo/
+/distribute/
