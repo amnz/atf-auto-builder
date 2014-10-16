@@ -8,4 +8,4 @@
 *.launch
 test.properties
 /testrepo/
-/distribute/
+/distribute/atf-auto-builder.jar

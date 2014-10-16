@@ -2,7 +2,7 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 
 task wrapper(type: Wrapper) { gradleVersion = '1.12' }
-defaultTasks 'clean', 'build'
+defaultTasks 'distribute'
 
 sourceCompatibility = 1.7
 archivesBaseName = 'atf-auto-builder'
@@ -87,5 +87,13 @@ task copyLibs(type : Copy) {
 		exclude {
 			new File('distribute/libs', it.name).exists()
 		}
+	}
+}
+
+
+task distribute(dependsOn: [clean, jar]) << {
+	copy {
+		from 'build/libs'
+		into 'distribute'
 	}
 }
